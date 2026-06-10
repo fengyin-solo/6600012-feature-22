@@ -1,5 +1,7 @@
 export type SimMode = 'gravity' | 'collision' | 'fluid' | 'vortex'
 
+export type ParticleScale = 'small' | 'medium' | 'large'
+
 export interface Particle {
   id: number
   position: [number, number, number]
@@ -23,5 +25,9 @@ export interface SimulationParams {
 export interface Preset {
   id: string
   name: string
+  mode: SimMode
+  particleScale: ParticleScale
+  description: string
+  icon: string
   params: Partial<SimulationParams>
 }
